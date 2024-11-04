@@ -1,0 +1,3 @@
+function virarCartao(element) {
+  element.classList.toggle("virado");
+}
