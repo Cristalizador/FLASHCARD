@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.flashcard {
+  width: 200px;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.6s;
+}
+
+.front {
+  background-color: #3498db;
+}
+
+.back {
+  background-color: #2ecc71;
+  transform: rotateY(180deg);
+}
+
+.flashcard.virado .front {
+  transform: rotateY(180deg);
+}
+
+.flashcard.virado .back {
+  transform: rotateY(360deg);
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .flashcard {
+    width: 180px;
+    height: 140px;
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+  .flashcard {
+    width: 150px;
+    height: 120px;
+  }
+}
